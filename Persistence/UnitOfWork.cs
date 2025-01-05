@@ -1,4 +1,5 @@
 ﻿using Application.Contracts.Persistence;
+using Persistence.Data;
 
 namespace Persistence
 {

@@ -1,5 +1,6 @@
 ﻿using Application.Contracts.Persistence;
 using Domain.Entities;
+using Persistence.Data;
 
 namespace Persistence.Posts
 {

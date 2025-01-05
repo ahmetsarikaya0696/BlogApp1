@@ -1,5 +1,6 @@
 ﻿using Application.Contracts.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Persistence.Data;
 using System.Linq.Expressions;
 
 namespace Persistence
