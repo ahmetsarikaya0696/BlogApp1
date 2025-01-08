@@ -13,7 +13,7 @@ namespace WebApi.Posts.Endpoints
                 var result = await mediator.Send(new DeletePostCommand(id));
                 return result.ToEndpointResult();
             }).WithName("DeletePost");
-              //.RequireAuthorization();
+            //.RequireAuthorization();
 
             return routeGroupBuilder;
         }

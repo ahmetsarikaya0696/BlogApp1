@@ -13,7 +13,7 @@ namespace WebApi.Posts.Endpoints
                 var result = await mediator.Send(createPostCommand);
                 return result.ToEndpointResult();
             }).WithName("CreatePost");
-              //.RequireAuthorization();
+            //.RequireAuthorization();
 
             return routeGroupBuilder;
         }

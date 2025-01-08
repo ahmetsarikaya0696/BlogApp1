@@ -14,7 +14,7 @@ namespace WebApi.User.Endpoints
                 var result = await mediator.Send(new GetUserByUserNameQuery(userName));
                 return result.ToEndpointResult();
             }).WithName("GetUserByUserName");
-              //.RequireAuthorization();
+            //.RequireAuthorization();
 
             return routeGroupBuilder;
         }

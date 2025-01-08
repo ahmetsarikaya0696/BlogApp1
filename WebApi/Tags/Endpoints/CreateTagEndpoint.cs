@@ -13,7 +13,7 @@ namespace WebApi.Tags.Endpoints
                 var result = await mediator.Send(createTagCommand);
                 return result.ToEndpointResult();
             }).WithName("CreateTag");
-              //.RequireAuthorization();
+            //.RequireAuthorization();
 
             return routeGroupBuilder;
         }

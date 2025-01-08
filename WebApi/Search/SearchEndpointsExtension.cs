@@ -1,5 +1,4 @@
-﻿using WebApi.Auth.Endpoints;
-using WebApi.Search.Endpoints;
+﻿using WebApi.Search.Endpoints;
 
 namespace WebApi.Search
 {

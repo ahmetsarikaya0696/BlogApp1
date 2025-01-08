@@ -25,6 +25,7 @@ namespace Infrastructure.Extensions
                 x.AddConsumer<PostViewCountIncrementedEventConsumer>();
                 x.AddConsumer<PostLikeChangedEventConsumer>();
                 x.AddConsumer<UserCreatedEventConsumer>();
+                x.AddConsumer<TagUpdatedEventConsumer>();
 
                 x.UsingRabbitMq((context, cfg) =>
                 {
@@ -60,6 +61,11 @@ namespace Infrastructure.Extensions
                     cfg.ReceiveEndpoint(ServiceBusConstants.UserCreatedEventQueueName, e =>
                     {
                         e.ConfigureConsumer<UserCreatedEventConsumer>(context);
+                    });
+
+                    cfg.ReceiveEndpoint(ServiceBusConstants.TagUpdatedEventQueueName, e =>
+                    {
+                        e.ConfigureConsumer<TagUpdatedEventConsumer>(context);
                     });
                 });
             });

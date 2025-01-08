@@ -8,5 +8,6 @@
         public const string PostViewCountIncrementedEventQueueName = "blog.app.postviewcountincremented.event.queue";
         public const string PostLikeChangedEventQueueName = "blog.app.postlikechanged.event.queue";
         public const string UserCreatedEventQueueName = "blog.app.usercreated.event.queue";
+        public const string TagUpdatedEventQueueName = "blog.app.tagupdated.event.queue";
     }
 }

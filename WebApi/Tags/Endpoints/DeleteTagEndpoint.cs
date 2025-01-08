@@ -13,7 +13,7 @@ namespace WebApi.Tags.Endpoints
                 var result = await mediator.Send(new DeleteTagCommand(id));
                 return result.ToEndpointResult();
             }).WithName("DeleteTag");
-              //.RequireAuthorization();
+            //.RequireAuthorization();
 
             return routeGroupBuilder;
         }

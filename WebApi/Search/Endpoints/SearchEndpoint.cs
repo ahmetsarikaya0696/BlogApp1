@@ -1,7 +1,5 @@
-﻿using Application.Features.Auths.CreateTokenByClient;
-using Application.Features.Search;
+﻿using Application.Features.Search;
 using MediatR;
-using Microsoft.AspNetCore.Mvc;
 using WebApi.Extensions;
 
 namespace WebApi.Search.Endpoints

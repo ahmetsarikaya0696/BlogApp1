@@ -13,7 +13,7 @@ namespace WebApi.Tags.Endpoints
                 var result = await mediator.Send(updateTagCommand);
                 return result.ToEndpointResult();
             }).WithName("UpdateTag");
-              //.RequireAuthorization();
+            //.RequireAuthorization();
 
             return routeGroupBuilder;
         }
