@@ -18,6 +18,7 @@ namespace Infrastructure.Services
 
             if (cacheRepository.KeyExists(postKey))
             {
+                entity.CreatedDate = DateTime.Now;
                 var jsonPost = JsonSerializer.Serialize(entity);
                 await cacheRepository.HashSetAsync(postKey, entity.Id.ToString(), jsonPost);
             }
@@ -94,6 +95,7 @@ namespace Infrastructure.Services
 
             if (cacheRepository.KeyExists(postKey))
             {
+                entity.LastModifiedDate = DateTime.Now;
                 var jsonPost = JsonSerializer.Serialize(entity);
                 cacheRepository.HashSet(postKey, entity.Id.ToString(), jsonPost);
             }
