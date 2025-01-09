@@ -1,6 +1,7 @@
 ﻿using Application.Contracts.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System.Net;
 
 namespace Application.Features.Auths.RevokeRefreshToken
@@ -9,7 +10,12 @@ namespace Application.Features.Auths.RevokeRefreshToken
     {
         public async Task<ServiceResult> Handle(RevokeRefreshTokenCommand request, CancellationToken cancellationToken)
         {
-            var existingRefreshToken = await refreshTokenRepository.Where(x => x.Code == request.RefreshToken).SingleOrDefaultAsync();
+            string refreshToken = request.RefreshToken;
+            if (!refreshToken.EndsWith("=")) refreshToken += "=";
+
+            var existingRefreshToken = await refreshTokenRepository
+                .Where(x => x.Code == refreshToken)
+                .SingleOrDefaultAsync(cancellationToken);
 
             if (existingRefreshToken is null) return ServiceResult.Error("Refresh token not found", HttpStatusCode.NotFound);
 

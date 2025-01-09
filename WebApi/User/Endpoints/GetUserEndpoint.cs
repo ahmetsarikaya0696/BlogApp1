@@ -13,8 +13,8 @@ namespace WebApi.User.Endpoints
                 var userName = httpContext.User.Identity!.Name!;
                 var result = await mediator.Send(new GetUserByUserNameQuery(userName));
                 return result.ToEndpointResult();
-            }).WithName("GetUserByUserName");
-            //.RequireAuthorization();
+            }).WithName("GetUserByUserName")
+            .RequireAuthorization();
 
             return routeGroupBuilder;
         }
