@@ -11,7 +11,6 @@ namespace Application.Features.Auths.RevokeRefreshToken
         public async Task<ServiceResult> Handle(RevokeRefreshTokenCommand request, CancellationToken cancellationToken)
         {
             string refreshToken = request.RefreshToken;
-            if (!refreshToken.EndsWith("=")) refreshToken += "=";
 
             var existingRefreshToken = await refreshTokenRepository
                 .Where(x => x.Code == refreshToken)
